@@ -29,7 +29,7 @@ class JsonConfigurationLoader {
             URI uri = Optional.ofNullable(classLoader.getResource(CONFIGURATION_FILE_NAME))
                     .orElseThrow(() -> new RuntimeException("Couldn't find json.properties file"))
                     .toURI();
-            File configurationFile = new File("C:\\Users\\Sam\\Documents\\properties\\json.properties");
+            File configurationFile = new File(uri);
             return readConfiguration(configurationFile);
 
         } catch (IOException | URISyntaxException exc) {
